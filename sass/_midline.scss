@@ -1,0 +1,27 @@
+@mixin mid-line-size($width){
+	position: absolute;
+	text-align: center;
+	width: $width;
+	left: 50%;
+	margin-left: $width / -2;
+}
+@mixin mid-line($font-size, $font-family, $line-height, $font-color, $line-color){
+	line-height: $line-height;
+	color: $font-color;
+	font-size: $font-size;
+	font-family: $font-family;
+	&:before, &:after{
+		position: absolute;
+		top: 50%;
+		background: $line-color;
+		content: "";
+		height: 1px;
+		width: 25%;
+	}
+	&:before {
+		left: 0;
+	}
+	&:after {
+		right: 0;
+	}
+}

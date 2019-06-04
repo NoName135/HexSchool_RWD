@@ -1,0 +1,249 @@
+.wrap{
+    max-width: 1024px;
+    margin: 0 auto;
+    /*header Start*/
+    .header{
+        background-image: url(../images/header_desktop.png);	
+        height: 420px;
+        background-repeat: no-repeat;
+        background-position: center;
+        @include mobile480(){
+            background-image: url(../images/header_mobile.png);
+        }
+        .top{
+            height: 56px;
+            background: rgba(0,0,0,0.75);
+            position: fixed;
+            top: 0;
+            width: 1024px;
+            z-index: 99;
+            @include Desktop-mid(){
+                width: 100%;
+            }
+            .logo{
+                float: left;
+                a{
+                    margin: 16px 0 16px 42px;
+                    background-image: url(../images/logo_w.svg);
+                    width: 120px;
+                    height: 24px;
+                    display: block;
+                    @include hide-text;
+                    @include ipad(){
+                        margin-left: 13px;
+                    }
+                }
+            }
+            .menu{
+                float: right;
+                margin-right: 18px;
+                @include ipad(){
+                    margin-right: 13px;
+                }
+                @include pad-top(){
+                    max-height: 0px;
+                    overflow: hidden;
+                    transition: max-height 1.5s;
+                    position: absolute;
+                    z-index: 100;
+                    top: 56px;
+                    left: 0;
+                    right: 0;
+                    margin-right: 0;
+                    background: rgba(0,0,0,0.75);
+                }
+                li{   
+                    float: left;
+                    width: 63px;
+                    @include pad-top(){
+                        float: none;
+                        width: 100%;
+                        border-bottom: 1px dashed #fff;
+                    }
+                    &:first-child{
+                        @include pad-top(){
+                            border-top: 1px dashed #fff;
+                        }
+                    }
+                    a{
+                        display: block;
+                        line-height: 56px;
+                        text-align: center;
+                        text-decoration: none;
+                        color: #fff;
+                        font-family: Microsoft JhengHei;
+                        @include pad-top(){
+                            transition: all .3s;
+                        }
+                        &:hover{
+                            background: #fff;
+                            color: rgba(0,0,0,0.75);
+                            @include ipad(){
+                                background: rgba(0,0,0,0.75);
+                                color: #fff;
+                            }
+                        }
+                        &.active {
+                            box-shadow: 0 -2px 0 #F56C23 inset;
+                            @include pad-top(){
+                                box-shadow: none;
+                            }
+                        }
+                        .fa-home, .fa-shopping-basket, .fa-user{
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+            .showmenu{
+                display: none;
+                @include pad-top(){
+                    display: block;
+                    float: right;
+                    margin: 1em;
+                    -webkit-transition-duration: 0.3s;
+                    transition-duration: 0.3s;
+                }
+                &:active{
+                    @include pad-top(){
+                        -webkit-transform: scale(0.9);
+                        transform: scale(0.9);
+                    }
+                }
+                .fa-bars, .fa-times{
+                    @include pad-top(){
+                        font-size: 24px;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .Page-title-wrap{
+            padding-top: 178px;
+            .Page-title{
+                max-width: 460px;
+                height: auto;
+                margin: 0 auto;
+                background: rgba(0,0,0,0.35);
+                h1{
+                    font-size: 36px;
+                    color: #fff;
+                    text-align: center;
+                    padding: 20px 0;
+                    font-family: Microsoft JhengHei;
+                    br{
+                        display: none;
+                        @include iphone8X(){
+                            display: block;
+                        }
+                    }
+                }
+                p{
+                    text-align: center;
+                    color: #fff;
+                    line-height: 1.5em;
+                    font-family: Microsoft JhengHei;
+                    &:last-child{
+                        padding-bottom: 25px;
+                    }
+                    span{
+                        padding: 0 8px;
+                    }
+                }
+            }
+        }
+    }
+    /*header End*/
+    .content{
+        background: $wisp-pink;
+    }
+    /*footer Start*/
+    .footer{
+        background: #efe9e7;
+        .information{
+            padding-left: 30px;
+            @include ipad(){
+                padding-left: 10px;
+            }
+            @include pad-top(){
+                padding-top: 20px;
+            }
+            li{
+                float: left;
+                width: 30%;
+                padding: 50px 10px;
+                line-height: 1.2em;
+                transition: all .3s;
+                @include pad-top(){
+                    width: 100%;
+                    padding: 30px 10px;
+                }
+                &:last-child{
+                    @include pad-top(){
+                        width: 50%;
+                    }
+                    @include mobile480(){
+                        width: 100%;
+                    }
+                }
+                h2{
+                    padding-bottom: 16px;
+                    color: #3D1101;
+                    font-size: 24px;
+                    font-family: Microsoft JhengHei;
+                }
+                p{
+                    color: #3D1101;
+                    font-family: Microsoft JhengHei;
+                }
+            }
+        }
+        .Social-web{
+            float: right;
+            margin: 50px 40px 0px 0;
+            @include ipad(){
+                margin-right: 10px;
+            }
+            @include pad-top(){
+                margin-top: 30px;
+            }
+            .logo-button{
+                padding-bottom: 20px;
+            }
+            .website-link{
+                float: right;
+                @include pad-top(){
+                    padding-bottom: 50px;
+                }
+                li{
+                    float: left;
+                    padding-left: 12px;
+                    .fa-google-plus-square{
+                        font-size: 36px;
+                        color: #DB4437;
+                    }
+                    .fa-twitter-square{
+                        font-size: 36px;
+                        color: #41ABE1;
+                    }
+                    .fa-facebook-square{
+                        font-size: 36px;
+                        color: #3A5795;
+                    }
+                }
+            }
+        }
+    }
+    /*footer End*/
+}
+.menu-show{
+    .wrap{
+        .header{
+            .menu{
+                @include pad-top(){
+                    max-height: 500px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,741 @@
+@import "variable";
+@import "grid";
+@import "hidetext";
+@import "midline";
+@import "ribbon";
+@import "reset";
+@import "purebutton";
+@import "pureform";
+@import "default";
+@import "layout";
+
+// Desktop
+.main{
+	overflow: hidden;
+	.main-title {
+		@include mid-line-size(461px);
+		h3{
+			@include mid-line(20px, $JhengHei, 32px, $seal-brown, #979797);
+			&:before, &:after{
+				@include iphonePlus(){
+					height: 0;
+					width: 0;
+				}
+			}
+		}
+		margin-top: 50px;
+		@include mobile480(){
+			width: 90%;
+			margin-left: -45%;
+		}			
+	}
+	ul{
+		padding-top: 145px;
+		li{
+			float: left;
+			width: 25.33333%;
+			margin: 0 4%;
+			text-align: center;
+			padding-bottom: 50px;
+			@include pad-top(){
+				width: 92.33333%;
+				padding-left: 0;
+			}
+			img{
+				border-radius: 50%;
+			}
+			h4{
+				padding: 20px 0 10px 0;
+				color: $seal-brown;
+				font-size: $font-m;
+				font-family: $JhengHei;
+			}
+			p{
+				text-align: left;
+				color: $seal-brown;
+				line-height: 1.5em;
+				font-family: $JhengHei;
+				@include pad-top(){
+					padding-left: 10%;
+				}
+			}
+		}
+	}
+}
+.chef{
+	clear: both;
+	background-color: $seal-brown;
+	height: 460px;
+	overflow: hidden;
+	@include pad-top(){
+		height: auto; 
+	}
+	.chef-img{
+		float: left;
+		margin-left: 1.5%;
+		background-image: url(../images/main_chef_brown.png);
+		width: 48.5%;
+		height: 460px;
+		background-repeat: no-repeat;
+		background-position: right;
+		@include pad-top(){
+			float: none;	
+			background-position: center;
+			width: 100%;
+			margin-left: 0;
+			margin-top: 30px;
+		}
+		@include mobile480(){
+			margin-top: 0;
+			background-position: right;
+			-webkit-background-size: cover;
+			background-size: cover; 
+		}
+	}
+	.box{
+		float: left;
+		width: 50%;
+		padding: 5% 5% 0 25px;
+		color: $wisp-pink;
+		@include ipad(){
+			padding-right: 3%;
+		}
+		@include pad-top(){
+			float: none;
+			width: 470px;
+			margin: 0 auto;
+			padding: 30px 0; 
+		}
+		@include mobile480(){
+			width: 100%;
+			padding: 30px;
+		}
+		h3{
+			font-size: 20px;
+			font-family: $JhengHei;
+			line-height: 32px;
+		}
+		p{
+			padding-bottom: 1em;
+			line-height: 1.5em;
+			font-family: $JhengHei;
+		}
+	}
+}
+.impression{
+	color: $seal-brown;
+	h2{
+		font-size: $font-l;
+		text-align: center;
+		padding: 50px 0 2em 0;
+		font-family: $JhengHei;
+	}
+	ul{
+		margin: 0 20px;
+		li{
+			float: left;
+			width: 29.33333%;
+			margin: 0 1%;
+			@include pad-top(){
+				width: 96.33333%; 
+			}
+			img{
+				border-radius: 50%;
+				float: left;
+			}
+			.impression-content{
+				padding-left: 80px;
+				h4{
+					font-size: $font-m;
+					padding: 22px 0 22px 0;
+					font-family: $JhengHei;
+				}
+				p{
+					line-height: 1.5em;
+					font-family: $JhengHei;
+					&:last-child{
+						float: right;
+						padding: 16px 0 50px 0;
+						opacity: 0.75;
+					}
+				}
+			}
+		}
+	}
+}
+.location{
+	clear: both;
+	height: 588px;
+	background-color: rgba(250,250,250,0.7);
+	color: $seal-brown;
+	@include pad-top(){
+		height: auto;
+		overflow: hidden;
+	}
+	.location-title{
+		padding: 50px 0 38px 0;
+		h2{
+			font-size: $font-l;
+			text-align: center;
+			line-height: 1.5em;
+			font-family: $JhengHei;
+		}
+	}
+	.location-content{
+		.map{
+			background-image: url(../images/Map.png);
+			height: 388px;
+			width: calc(50% - 10px);
+			background-repeat: no-repeat;
+			float: left;
+			background-origin: content-box;
+			padding-left: 4%;
+			@include ipad(){
+				padding-left: 1.5%;
+			}
+			@include pad-top(){
+				width: calc(100% - 10px);
+				padding-left: 10px;
+				background-position: center;
+			}
+			@include mobile480(){
+				padding-left: 10px;
+				background-position: left;
+			}
+		}
+		.information{
+			float: left;
+			width: calc(50% + 10px);
+			height: 388px;
+			padding: 0 4% 0 20px;
+			position: relative;
+			@include ipad(){
+				padding-right: 1.5%;
+			}
+			@include pad-top(){
+				width: 100%;
+				height: 450px;
+				padding: 30px 10px;
+			}
+			h5{
+				padding-bottom: 6px;
+				font-size: $font-s;
+				font-family: PingFangTC-Light;
+			}
+			.form-text{
+				margin-bottom: 12px;
+				border-radius: 3px;
+				box-shadow: 0 1px 0 0 #ECECEC inset;
+				border: 1px solid #CCCCCC;
+				width: 100%;
+				height: 32px;
+				font-size: 16px;
+				padding-left: $font-s;
+				&:focus{
+					background: #AFEEEE;
+				}
+			}
+			span{
+				margin-top: 8px;
+				float: left;
+				font-size: $font-s;
+				font-family: PingFangTC-Light;
+				@include mobile480(){
+					margin-top: 0;
+				}
+			}
+			.radio{
+				float: left;
+				margin: 8px 36px 0 6px;
+				width: 16px;
+				height: 16px;
+				vertical-align: middle;
+			}
+			.button{
+				position: absolute;
+				right: 8%;
+				bottom: 0;
+				@include ipad(){
+					right: 3.5%;
+				}
+				@include pad-top(){
+					bottom: 30px;
+				}
+				.reset, .submit{
+					width: 70px;
+					height: 32px;
+					color: #fff;
+					font-size: $font-s;
+					border-radius: 3px;
+					&:hover{
+						cursor: pointer;
+						box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+					}
+				}
+				.reset{
+					background: rgba(0,0,0,0.35);
+					margin-right: 10px;
+					&:hover{
+						@include ipad(){
+							box-shadow: none;
+						}
+					}
+					&:active{
+						@include ipad(){
+							box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+						}
+					}
+				}
+				.submit{
+					background: $Pumpkin;
+				}
+			}
+		}
+	}
+}
+
+.slidetop{
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	a{
+		font-size: 56px;
+		color: rgba(0,0,0,0.75);
+		@include ipad(){
+			font-size: 48px;
+		}
+	}
+}
+.animated{
+	opacity: 0;
+	transition: all 1.5s;
+	transform: translateY(50px);
+}
+.fadeIn{
+	opacity: 1;
+	transform: translateY(0);
+}
+
+// Cart
+.shop{
+	.aside{
+		float: left;
+		color: $seal-brown;
+		padding: 50px 0 0 1.5%;
+		width: 23.5%;
+		@include Desktop-low(){
+			padding-left: 1%;
+			width: 24%;
+		}
+		@include pad-top(){
+			width: 100%;
+			margin: 0;
+			padding: 50px 10px 0 10px;
+		}
+		h3{
+			font-size: 20px;
+			padding-bottom: 1em;
+			font-family: $JhengHei;
+			.fa-leaf{
+				font-size: 32px;
+			}
+			span{
+				padding-left: 15px;
+			}
+		}
+		ul{
+			li{
+				border-bottom: 1px solid $seal-brown;
+				a{
+					padding-left: 8px;
+					color:$seal-brown;
+					display:block;
+					width:100%;
+					height:32px;
+					line-height:32px;
+					text-decoration:none;
+					font-family: $JhengHei;
+					&:hover, &.active{
+						background: $seal-brown;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+	.cart{
+		float: left;
+		width: 75%;
+		@include pad-top(){
+			width: 100%;
+		}
+		.cart-title{
+			margin: 50px 30px 0 20px;
+			@include ipad(){
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			.search-box{
+				float: left;
+				width: calc(65% - 32px);
+				height: 30px;
+				border: 2px solid $seal-brown;
+				border-right: 0px;
+				@include pad-top(){
+					width: calc(100% - 32px);
+					margin-bottom: 20px;
+				}
+				&:focus{
+					background: #AFEEEE;
+				}
+			}
+			.fa-search{
+				float: left;
+				width: 32px;
+				height: 30px;
+				border: 2px solid $seal-brown;
+				background: $seal-brown;
+				cursor: pointer;
+				color: #fff;
+				font-size: 16px;
+				cursor: pointer;
+			}
+			.cart-logo{
+				float: right;
+				li{
+					float: left;
+					padding: 0 12px;
+					color: $seal-brown;
+					font-family: $JhengHei;
+					&:first-child{
+						margin-top: 8px;
+						border-right: 1px solid $seal-brown;
+					}
+					.fa-shopping-cart{
+						color: $seal-brown;
+						font-size: $font-l;
+						transition-duration: 0.3s;
+						position: relative;
+						&:hover{
+							-webkit-transform: translateX(8px);
+							transform: translateX(8px);
+							@include ipad(){
+								-webkit-transform: none;
+								transform: none;
+							}
+						}
+						.quantity{
+							position: absolute;
+							top: -5px;
+							right: -5px;
+							width: 16px;
+							height: 16px;
+							padding-top: 2px;
+							background: #FF5E45;
+							color: #fff;
+							font-size: 8px;
+							text-align: center;
+							border-radius: 50%;
+						}
+					}
+				}
+			}
+		}
+		.cart-content{
+			float: left;
+			margin: 26px 2% 0 20px;
+			@include ipad(){
+				margin-right: 1%;
+			}
+			@include pad-top(){
+				margin: 26px 10px 0 10px;
+			}
+			.product{
+				li{
+					float: left;
+					width: 30.333333%;
+					margin: 0 3% 30px 0;	
+					text-align: center;
+					box-shadow: 3px 3px 4px 0 rgba(0,0,0,0.16);
+					transition: all .3s;
+					position:relative;
+					z-index: 1;
+					@include pad-top(){
+						width: 47%;
+						margin: 0 1.5% 30px 1.5%;
+					}
+					@include iphone8X(){
+						width: 97%;
+					}
+					.product-content{
+						background: $wisp-pink;
+						.fa-heart{
+							position: absolute;
+							top: 10px;
+							left: 10px;
+							font-size: $font-l;
+							color: #fff;
+							cursor: pointer;
+						}
+						.fas{
+							color: red;
+						}
+						a{
+							color: $seal-brown;
+							.ribbon{
+								@include ribbon-right-size(-8px, 100px, #fff, #00CC99, $NotoSans, #078F6D);
+							}
+							img {
+								margin-bottom: 11px;
+								width: 100%;
+							}
+							h3 {
+								font-size: 20px;
+							}
+							h5 {
+								font-size: 12px;
+								line-height: $font-l;
+								position: relative;
+								font-family: $JhengHei;
+								&:after {
+									content: "";
+									position: absolute;
+									left: 50%;
+									top: 120%;
+									width: 42%;
+									border-top: 1px solid $seal-brown;
+									transform: translateX(-50%);
+								}
+							}
+						}
+					}
+					.product-price {
+						margin-top: 32px;
+						font-size: 20px;
+						font-family: $Roboto;
+						font-weight: 700;
+						color: $seal-brown;
+					}
+					.cart-add {
+						width: 90%;
+						margin: 13px auto 10px auto;
+						padding: 4px;
+						color: #FF5E45;
+						border: 2px solid #FF5E45;
+						border-radius: 3px;
+						display: block;
+						&:hover {
+							background: #FF5E45;
+							color: #fff;
+							@include ipad(){
+								background: none;
+								color: #FF5E45;
+							}
+						}
+						&:active{
+							@include ipad(){
+								background: #FF5E45;
+								color: #fff;
+							}
+						}
+						span{
+							padding-left: 9px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Login
+.login-form{
+	padding: 50px 0;
+	h2{
+		font-size: 48px;
+		color: $seal-brown;
+		font-family: $NotoSans;
+		font-weight: 700;
+		text-align: center;
+		padding-bottom: 5px;
+	}
+	h3{
+		font-size: 20px;
+		color: $seal-brown;
+		font-family: $NotoSans;
+		font-weight: 500;
+		text-align: center;
+		padding-bottom: 35px;
+	}
+	.form-login{
+		max-width: 300px;
+		margin: 0 auto;
+		padding: 0 15px;
+		box-shadow: 3px 3px 4px 0 rgba(0,0,0,0.16);
+		border-top: 3px solid $Pumpkin;
+		h4{
+			font-size: $font-m;
+			color: $seal-brown;
+			font-family: $NotoSans;
+			text-align: center;
+			font-weight: 700;
+			padding: 15px 0 5px 0;
+		}
+		.pure-form-stacked{
+			.email, .password{
+				color: $seal-brown;
+			}
+			.password{
+				padding-top: 15px;
+			}
+			.form-login-text{
+				width: 100%;
+				position: relative;
+				&:focus{
+					background: #AFEEEE;
+				}
+			}
+			.fa-envelope, .fa-lock{
+				font-size: 15px;
+				position: absolute;
+				z-index: 9;
+				margin: 8px 0 0 10px;
+				color: rgba(61,17,0,0.50);
+			}
+			p{  
+				padding-left: 1px;
+				a{
+					font-size: $font-s;
+					color: #FF5E45;
+				}
+			}
+			.register-button, .login-button{
+				width: 47%;
+				border-radius: 3px;
+				font-size: $font-s;
+				font-family: $PinFang;
+				cursor: pointer;
+				&:hover, &:hover{
+					cursor: pointer;
+					box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+				}
+			}
+			.register-button{
+				float: left; 
+				background: rgba(0,0,0,0.35);
+				margin-top: 30px;
+				color: #fff;
+			}
+			.login-button{
+				float: right;
+				color: #fff;
+				background: $Pumpkin;
+				margin-top: 30px;
+			}
+		}
+	}
+}
+
+// Register
+.register-form{
+	padding: 50px 0;
+	h2{
+		font-size: 48px;
+		color: $seal-brown;
+		font-family: $NotoSans;
+		font-weight: 700;
+		text-align: center;
+		padding-bottom: 50px 0 5px 0;
+	}
+	h3{
+		font-size: 20px;
+		color: $seal-brown;
+		font-family: $NotoSans;
+		font-weight: 500;
+		text-align: center;
+		padding-bottom: 35px;
+	}
+	.form-login{
+		max-width: 620px;
+		height: 316px;
+		margin: 0 auto;
+		padding: 0 15px;
+		box-shadow: 3px 3px 4px 0 rgba(0,0,0,0.16);
+		border-top: 3px solid $Pumpkin;
+		@include pad-top(){
+			width: 90%;
+			height: auto;
+			overflow: hidden;
+		}
+		h4{
+			font-size: $font-m;
+			color: $seal-brown;
+			font-family: $NotoSans;
+			text-align: center;
+			font-weight: 500;
+			padding-top: 15px;
+		}
+		.terms{
+			float: left;
+			width: 50%;
+			padding: 16px 0 0 15px;
+			line-height: 1.2em;
+			font-size: $font-m;
+			color: $seal-brown;
+			@include pad-top(){
+				width: 100%;
+			}
+		}
+		.form-content{
+			float: left;
+			width: 50%;
+			padding: 5px 0 0 20px;
+			@include pad-top(){
+				width: 100%;
+				padding-top: 20px;
+			}
+		}
+		.email, .password{
+			color: $seal-brown;
+		}
+		.password{
+			padding-top: 15px;
+		}
+		.form-login-text{
+			width: 100%;
+			position: relative;
+			&:focus{
+				background: #AFEEEE;
+			}
+		}
+		.fa-envelope, .form-content .fa-lock{
+			font-size: 15px;
+			position: absolute;
+			z-index: 9;
+			margin: 8px 0 0 10px;
+			color: rgba(61,17,0,0.50);
+		}
+		p{  
+			padding-left: 1px;
+			a{
+				font-size: $font-s;
+				color: #FF5E45;
+			}
+		}
+		.register-button{
+			float: right;
+			width: 125px;
+			border-radius: 3px;
+			color: #fff;
+			font-size: $font-s;
+			margin-top: 30px;
+			background: $Pumpkin;
+			font-family: $PinFang;
+			cursor: pointer;
+			&:hover{
+				cursor: pointer;
+				box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+			}
+		}
+	}
+}

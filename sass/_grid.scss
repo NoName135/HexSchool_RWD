@@ -1,0 +1,65 @@
+@mixin Desktop{
+	@media (max-width: 1280px){
+		@content
+	}
+}
+@mixin Desktop-mid{
+	@media (max-width: 1024px){
+		@content
+	}
+}
+@mixin Desktop-top{
+	@media (max-width: 1023px){
+		@content
+	}
+}
+@mixin Desktop-low{
+	@media (max-width: 800px){
+		@content
+	}
+}
+@mixin ipad{
+	@media (max-width: 768px){
+		@content
+	}
+}
+@mixin pad-top{
+	@media (max-width: 767px){
+		@content
+	}
+}
+@mixin pad600{
+	@media (max-width: 600px){
+		@content
+	}
+}
+@mixin iphone{
+	@media (max-width: 568px){
+		@content
+	}
+}
+@mixin mobile480{
+	@media (max-width: 480px){
+		@content
+	}
+}
+@mixin iphonePlus{
+	@media (max-width: 414px){
+		@content
+	}
+}
+@mixin iphone8X{
+	@media (max-width: 375px){
+		@content
+	}
+}
+@mixin mobile360{
+	@media (max-width: 360px){
+		@content
+	}
+}
+@mixin iphone5{
+	@media (max-width: 320px){
+		@content
+	}
+}

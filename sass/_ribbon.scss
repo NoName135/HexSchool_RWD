@@ -1,0 +1,39 @@
+@mixin ribbon-right-size($position, $size, $font-color, $font-bg, $font-family, $side-color){
+	top: $position;
+	right: $position;
+	width: $size;
+	height: $size;
+	overflow: hidden;
+	position: absolute;
+	&::before, &::after {
+		position: absolute;
+		z-index: -1;
+		content: '';
+		display: block;
+		border: 10px solid $side-color;
+	}
+	&::before {
+		top: $position / -2;
+		left: $position / -2;
+		transform: rotate(45deg);
+	}
+	&::after {
+		bottom: $position / -2 + 1;
+		right: $position / -2 + 1;
+		transform: rotate(45deg);
+	}		
+	p{
+		position: absolute;
+		display: block;
+		left: 0px;
+		top: 20px;
+		width: $size * 1.25;
+		padding: 5px 0;
+		background: $font-bg;
+		color: $font-color;
+		font-size: $font-s;
+		font-family: $font-family;
+		text-align: center;
+		transform: rotate(45deg);
+	}
+}
